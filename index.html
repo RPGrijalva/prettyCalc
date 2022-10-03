@@ -3,7 +3,7 @@
 <html data-wf-page="629bfce855086567919cd99c" data-wf-site="629bfce85508656e059cd99b">
 <head>
   <meta charset="utf-8">
-  <title>Testing tutorials</title>
+  <title>Pretty Calculator</title>
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
   <link href="css/normalize.css" rel="stylesheet" type="text/css">
@@ -26,10 +26,10 @@
       </div>
       <div class="form-block w-form">
         <form id="theme-frm">
-          <div class="html-embed w-embed"><label for="theme" style="display:flex;justify-content:space-around;width:55px;"><span onclick="theme.value='1', themeChange()">1</span><span onclick="theme.value='2', themeChange()">2</span><span onclick="theme.value='3', themeChange()">3</span></label>
+          <div class="html-embed w-embed"><label for="theme" style="display:flex;justify-content:space-around;width:55px;"><span onclick="theme.value='1',localStorage.setItem('themeVal', theme.value); themeChange()">1</span><span onclick="theme.value='2', localStorage.setItem('themeVal', theme.value);themeChange()">2</span><span onclick="theme.value='3',localStorage.setItem('themeVal', theme.value); themeChange()">3</span></label>
             <style data="test" type="text/css">
             </style>
-            <input type="range" value="1" class="slider" name="theme" id="theme" min="1" step="1" max="3" onchange="themeChange()" autocomplete="on">
+            <input type="range" value="1" class="slider" name="theme" id="theme" min="1" step="1" max="3" onchange="localStorage.setItem('themeVal', this.value);themeChange()" autocomplete="on">
           </div>
         </form>
       </div>

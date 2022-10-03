@@ -13,41 +13,45 @@ let equal = document.querySelector('.equal');
 let mainKey = document.querySelectorAll('.numpad-button');
 
 function themeChange () {
-    body.style.backgroundColor = "var(--mainBG"+theme.value+")";
-    grid.style.backgroundColor = "var(--keybrdBG"+theme.value+")";
-    calcWindow.style.backgroundColor = "var(--screenBG"+theme.value+")";
-    calcWindow.style.color = "var(--scrntxt"+theme.value+")";
-    heading.style.color = "var(--scrntxt"+theme.value+")";
-    thmwrd.style.color = "var(--scrntxt"+theme.value+")";
-    nums.style.color = "var(--scrntxt"+theme.value+")";
+    
+    console.log(localStorage.themeVal)
+
+    body.style.backgroundColor = "var(--mainBG"+localStorage.themeVal+")";
+    grid.style.backgroundColor = "var(--keybrdBG"+localStorage.themeVal+")";
+    calcWindow.style.backgroundColor = "var(--screenBG"+localStorage.themeVal+")";
+    calcWindow.style.color = "var(--scrntxt"+localStorage.themeVal+")";
+    heading.style.color = "var(--scrntxt"+localStorage.themeVal+")";
+    thmwrd.style.color = "var(--scrntxt"+localStorage.themeVal+")";
+    nums.style.color = "var(--scrntxt"+localStorage.themeVal+")";
 
     for (let i = 0; i < mainKey.length; i++) {
-        mainKey[i].style.backgroundColor = "var(--mainkeyBG"+theme.value+")";
-        mainKey[i].style.color = "var(--keytxtBG"+theme.value+")";
-        mainKey[i].style.boxShadow = "0 4px 1px -1px var(--mainkeySD"+theme.value+")";
+        mainKey[i].style.backgroundColor = "var(--mainkeyBG"+localStorage.themeVal+")";
+        mainKey[i].style.color = "var(--keytxtBG"+localStorage.themeVal+")";
+        mainKey[i].style.boxShadow = "0 4px 1px -1px var(--mainkeySD"+localStorage.themeVal+")";
     }
 
     for (let i = 0; i < blubtn.length; i++) {
-        blubtn[i].style.backgroundColor = "var(--keyBG"+theme.value+")";
-        blubtn[i].style.boxShadow = "0 4px 1px -1px var(--keySD"+theme.value+")";
+        blubtn[i].style.backgroundColor = "var(--keyBG"+localStorage.themeVal+")";
+        blubtn[i].style.boxShadow = "0 4px 1px -1px var(--keySD"+localStorage.themeVal+")";
     }
 
-    equal.style.backgroundColor = "var(--eqkeyBG"+theme.value+")";
-    equal.style.boxShadow = "0 4px 1px -1px var(--eqkeySD"+theme.value+")";
-    equal.style.color = "var(--eqTXT"+theme.value+")";
+    equal.style.backgroundColor = "var(--eqkeyBG"+localStorage.themeVal+")";
+    equal.style.boxShadow = "0 4px 1px -1px var(--eqkeySD"+localStorage.themeVal+")";
+    equal.style.color = "var(--eqTXT"+localStorage.themeVal+")";
 
-    theme.style.backgroundColor = "var(--keybrdBG"+theme.value+")";
-    barStyle.innerHTML = "#theme::-webkit-slider-thumb { background-color: var(--eqkeyBG"+theme.value+")} #theme::-moz-range-thumb { background-color: var(--eqkeyBG"+theme.value+")};"
+    theme.style.backgroundColor = "var(--keybrdBG"+localStorage.themeVal+")";
+    barStyle.innerHTML = "#theme::-webkit-slider-thumb { background-color: var(--eqkeyBG"+localStorage.themeVal+")} #theme::-moz-range-thumb { background-color: var(--eqkeyBG"+localStorage.themeVal+")};"
 
+    theme.value=localStorage.themeVal;
 }
 
 
 document.addEventListener('keydown', (key) => {
     if (key.key === "ArrowLeft" || key.key === "ArrowDown") {
-        theme.value = Math.max(theme.value-1, 1);
+        localStorage.themeVal = Math.max(localStorage.themeVal-1, 1);
     }
     if (key.key === "ArrowRight" || key.key === "ArrowUp" ) {
-        theme.value = Math.min(parseFloat(theme.value)+1, 3);
+        localStorage.themeVal = Math.min(parseFloat(localStorage.themeVal)+1, 3);
     }
     themeChange();
 })

@@ -28,7 +28,7 @@ Users should be able to:
 - See the size of the elements adjust based on their device's screen size (Super easy, barely an inconvenience)
 - Perform mathematical operations like addition, subtraction, multiplication, and division (a refresher was needed, and this was a good one... until I realized the easy solution)
 - Adjust the color theme based on their preference (the real challenge, hardest part of which was likely the slider bar. It took some really clever handiwork to figure that one out)
-- ~~**Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser~~ I'll have to come back to this. I'm not sure how to use cookies, let alone achieve this without the use of them like I initially wanted
+- **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser ~~I'll have to come back to this. I'm not sure how to use cookies, let alone achieve this without the use of them like I initially wanted~~ This was actually super easy, barely an inconvenience. LocalStorage saves right to the browser, and you can get the stored variable with localstorage.variableNameHere
 
 ### Screenshot
 
