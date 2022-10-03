@@ -13,8 +13,11 @@ let equal = document.querySelector('.equal');
 let mainKey = document.querySelectorAll('.numpad-button');
 
 function themeChange () {
-    
     console.log(localStorage.themeVal)
+    console.log(typeof(localStorage.themeVal))
+    if (typeof(localStorage.themeVal) !== 'string') {
+        localStorage.setItem('themeVal', 1)
+    };
 
     body.style.backgroundColor = "var(--mainBG"+localStorage.themeVal+")";
     grid.style.backgroundColor = "var(--keybrdBG"+localStorage.themeVal+")";
